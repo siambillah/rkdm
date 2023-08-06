@@ -1,4 +1,124 @@
+/* Bangla fornt cdn*/
+@import url('https://fonts.maateen.me/kalpurush/font.css');
+@import url('https://fonts.maateen.me/solaiman-lipi/font.css');
+@import url('https://fonts.maateen.me/siyam-rupali/font.css');
+@import url('https://fonts.maateen.me/charu-chandan-hard-stroke/font.css');
+
+:root{
+    background-image: url(/images/bgpattern.jpg); 
+}
 body{
     max-width: 1000px; 
     margin: 0 auto;
+    font-family: 'Kalpurush', Arial, sans-serif !important;
 }
+a{
+    text-decoration: none;
+}
+.body{
+    margin: 0 auto;
+}
+.hbg{
+    background-image: url(/images/headbg.png);
+}
+.list{
+    list-style: none;
+}
+
+.home-brand{
+    width: 30px;
+}
+
+/* navbar hover effect  */
+ @media screen and (min-width: 993px) 
+ {
+    .dropdown .dropdown-menu.show
+    {
+        display: none !important;
+    }
+    .dropdown:hover .dropdown-menu
+    {
+        display: block !important;
+    } 
+    .dropdown:focus .dropdown-menu
+    {
+        display: block !important;
+    }
+ }
+
+ /* sidebar link manupulation */
+.side-link{
+    text-decoration: none;
+}
+.side-link:hover{
+    display: block;
+    border-radius: 5px;
+    background-color: greenyellow;
+    color: dark;
+}
+
+/* Mani Page news text animation start here */
+.news{
+    height: 50px;	
+    overflow: hidden;
+    position: relative;
+}
+.news h6{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    line-height: 50px;
+    font-weight: bolder;
+    text-align: center;
+    /* Starting position */
+    transform:translateX(100%);
+    /* Apply animation to this element */
+    animation: scroll-left 20s linear infinite;
+}
+.news h6:hover{
+    animation-play-state: paused;
+}
+@keyframes scroll-left {
+    0%   {
+    transform: translateX(100%); 		
+    }
+    100% {
+    transform: translateX(-100%); 
+    }
+}
+
+/* Mani Page news text animation end here */
+
+/* print page data strat here */
+.print-header{
+    display: none;
+}
+
+@media print {
+    body{
+        visibility: hidden;
+    }
+    .hid-btn{
+        visibility: hidden;
+    }
+    .print-page, print-page *{
+        visibility: visible;
+        margin-top: 0;
+    }
+    .print-page{
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+    }
+    .print-header{
+        display: flex;
+    }
+    #header, #footer, #sidebar{
+        display: none;
+    }
+}
+
+/* print page data end here */
